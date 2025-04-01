@@ -28,6 +28,12 @@ public class Kniha {
         return nazev;
     }
 
+    public void setNazev(String nazev) {
+        this.nazev = nazev;
+    }
 
 
+    public String getAutor() {
+        return autor;
+    }
 }

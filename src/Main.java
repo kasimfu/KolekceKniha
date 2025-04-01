@@ -63,5 +63,61 @@ public class Main {
             seznamKnih.get(i).info();
         }
 
+        boolean pravda3 = true;
+
+        while(pravda3){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Chceš změnit název knihy? Ano/Konec");
+            String decision = sc.nextLine();
+            if (decision.equals("Ano") || decision.equals("ano")){
+                System.out.println("Číslo knihy?");
+                System.out.println("Vyber z čísla 1 až "+ seznamKnih.size());
+                int cislo = sc.nextInt()-1;
+                seznamKnih.get(cislo).zmenNazev();
+            }
+            else if (decision.equals("Konec") || decision.equals("konec")){
+                System.out.println("Konec");
+                pravda3 = false;
+            }
+            else {
+                System.out.println("Konec");
+                pravda3 = false;
+            }
+        }
+
+        for (int i = 0; i < seznamKnih.size(); i++) {
+            seznamKnih.get(i).info();
+        }
+
+        boolean pravda4 = true;
+
+        while(pravda4){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Chceš vidět knihy od přesného autora? Ano/Konec");
+            String decision = sc.nextLine();
+            if (decision.equals("Ano") || decision.equals("ano")){
+                System.out.println("Jméno autora?");
+                String hledej = sc.nextLine();
+                for (int i = 0; i < seznamKnih.size(); i++) {
+                    if (seznamKnih.get(i).getAutor().equals(hledej)){
+                        seznamKnih.get(i).info();
+                    }
+
+                }
+
+            }
+            else if (decision.equals("Konec") || decision.equals("konec")){
+                System.out.println("Konec");
+                pravda4 = false;
+            }
+            else {
+                System.out.println("Konec");
+                pravda4 = false;
+            }
+        }
+
+
+
+
     }
 }
